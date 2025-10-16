@@ -508,7 +508,7 @@ section.path .container > ul > li ul {
   margin-left: 1rem;
 
   display: grid;
-  grid-auto-rows: var(--text-md);
+  grid-auto-rows: minmax(var(--text-md), 100%);
   gap: 0.5rem;
 }
 section.path .container > ul > li.completed ul {
