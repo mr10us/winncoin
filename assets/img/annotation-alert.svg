@@ -1,0 +1,5 @@
+<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<symbol id="icon">
+		<path d="M14 6.03125V10.8125M14 15.5938V15.4739M17.4647 20.0978L14 26.75L10.8125 20.0978H4.4375C2.67709 20.0978 1.25 18.6707 1.25 16.9103V4.4375C1.25 2.67709 2.67709 1.25 4.4375 1.25H23.5625C25.3229 1.25 26.75 2.67709 26.75 4.4375V16.9103C26.75 18.6707 25.3229 20.0978 23.5625 20.0978H17.4647Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+	</symbol>
+</svg>
