@@ -542,16 +542,16 @@ label > textarea:not([type="checkbox"]):has(+ span):not(:focus):placeholder-show
   margin-left: 0 !important;
 }
 
-
-.drag-scroll {
-  overflow-x: auto;
-  overflow-y: hidden;
-  cursor: grab;
-  /* чтобы на тачах отзывчиво тянулось по оси X */
-  touch-action: pan-x;
-  -webkit-overflow-scrolling: touch; /* iOS инерция */
-}
-.drag-scroll.dragging {
-  cursor: grabbing;
-  user-select: none; /* чтобы не выделялся текст при перетягивании */
+@media (min-width: 1024px) {
+  .drag-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+  }
+  .drag-scroll.dragging {
+    cursor: grabbing;
+    user-select: none;
+  }
 }
