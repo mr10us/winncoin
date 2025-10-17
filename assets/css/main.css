@@ -1170,6 +1170,9 @@ section.team .swiper .swiper-pagination {
 }
 
 @media screen and (min-width: 1024px) {
+  section.team ul {
+    grid-auto-columns: 30%;
+  }
   section.team ul li img {
     height: 380px;
   }
