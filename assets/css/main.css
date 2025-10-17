@@ -632,6 +632,11 @@ section.feature {
 
   position: relative;
   backdrop-filter: blur(4px);
+
+  border: 1px solid;
+
+  border-image-source: radial-gradient(#f7ae1c 0%, rgba(0, 0, 0, 0.5) 100%);
+  border-image-slice: 1;
 }
 section.feature::before {
   content: "";
