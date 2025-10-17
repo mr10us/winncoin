@@ -628,6 +628,9 @@ section.path .container > ul > li.up-next ul {
     grid-template-rows: var(--text-lg) var(--text-lg) auto;
     position: relative;
   }
+  section.path .container > ul > li::before {
+    content: none;
+  }
 
   section.path .container > ul > li::after {
     content: "";
