@@ -38,7 +38,7 @@
     speed = 80,
     turns = 1
   ) {
-    const spd = Number(speed) || 80;
+    const spd = Number(speed) || 20;
     const CHARS = "0123456789,"; // анимируем только это (включая запятую)
     const STATIC = "+-$"; // эти символы ставим сразу
     const full = CHARS.length;
