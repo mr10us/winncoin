@@ -75,7 +75,7 @@ ul {
   --color-gray: #a8a8a8;
 
   --section-padding: clamp(2.5rem, 1.8421rem + 2.6316vw, 4.5rem);
-  --header-height: 71px;
+  --header-height: 69px;
 
   --text-sm: clamp(0.875rem, 0.7949rem + 0.2564vw, 1rem); /* 14-16 px */
   --text-md: clamp(0.875rem, 0.6346rem + 0.7692vw, 1.25rem); /* 14-20 px */
@@ -555,3 +555,104 @@ label > textarea:not([type="checkbox"]):has(+ span):not(:focus):placeholder-show
     user-select: none;
   }
 }
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.fancy-border {
+  position: relative;
+  border: 1px solid transparent;
+}
+.fancy-border * {
+  z-index: 4;
+}
+
+.fancy-border.loading::after {
+  opacity: 0;
+  border: 1px solid var(--color-primary);
+}
+
+.fancy-border::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  z-index: -1;
+  opacity: 1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--color-primary),
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    var(--color-primary)
+  );
+  border-radius: inherit;
+  animation: rotation 5s linear infinite;
+  animation-delay: var(--fdelay);
+  padding: 2px;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; /* Chrome/Safari */
+  mask-composite: exclude;
+
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+.num {
+  --h: 1em;                /* высота окна одной цифры */
+  display: inline-block;
+  height: var(--h);
+  width: 0.8ch;              /* ширина цифры; с табличными цифрами ок */
+  overflow: hidden;
+  line-height: 1;
+  text-align: center;
+  font-variant-numeric: tabular-nums;     /* одинаковая ширина цифр */
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+.num-list {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  transform: translateY(0);
+  transition: transform .3s;              /* когда type === "slide" */
+}
+
+.num-list > span {
+  height: var(--h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

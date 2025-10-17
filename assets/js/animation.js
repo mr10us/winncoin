@@ -24,55 +24,93 @@
   }
 
   /* ---------- Утилиты ---------- */
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const formatWithCommas = (n) => String(n).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+  const prefersReduced = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  const formatWithCommas = (n) =>
+    String(n).replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
 
   /* ---------- Счётчик RollingNum ---------- */
-  function RollingNum(container, number, type = "slide", speed = 100) {
-    const spd = Number(speed) || 100;
+  function RollingNum(
+    container,
+    number,
+    type = "slide",
+    speed = 80,
+    turns = 1
+  ) {
+    const spd = Number(speed) || 80;
+    const CHARS = "0123456789,"; // анимируем только это (включая запятую)
+    const STATIC = "+-$"; // эти символы ставим сразу
+    const full = CHARS.length;
 
-    // Если пользователь против анимаций — просто вставим число
+    // 0) очистка контейнера + отмена прошлых таймеров
+    if (container._rollingTimers) {
+      container._rollingTimers.forEach(clearInterval);
+    }
+    container._rollingTimers = [];
+    container.innerHTML = ""; // ← полная очистка
+
+    // 1) режим «меньше анимаций»
     if (prefersReduced) {
-      container.textContent = formatWithCommas(number);
+      container.textContent = String(formatWithCommas(number));
       return;
     }
 
-    const delay = 300;
-    const digits = formatWithCommas(number).split("");
-    const slideStyle = "transition: margin .3s";
+    // 2) готовим вывод
+    const out = String(formatWithCommas(number));
+    const digits = out.split("");
 
-    // Разовая сборка HTML
-    container.innerHTML += digits
+    // 3) строим разметку
+    container.innerHTML = digits
       .map((ch, i) => {
-        const classId = ch === "," ? `num-idx-${i}-point` : `num-idx-${i}-${ch}`;
-        return `<span class="num ${classId}" data-text="${ch}">
-          <span class="num-list" style="${type === "slide" ? slideStyle : ""}">0 1 2 3 4 5 6 7 8 9 ,</span>
+        if (STATIC.includes(ch)) {
+          return `<span class="num num-static">${ch}</span>`;
+        }
+        if (CHARS.includes(ch)) {
+          return `
+        <span class="num num-idx-${i}" data-text="${ch}">
+          <span class="num-list">
+            ${CHARS.split("")
+              .map((c) => `<span>${c}</span>`)
+              .join("")}
+          </span>
         </span>`;
+        }
+        // неизвестные символы — просто как есть
+        return `<span class="num num-static">${ch}</span>`;
       })
       .join("");
 
-    // Старт анимаций с лесенкой
+    // 4) запускаем анимации только для цифр и запятой
+    const delayStep = 300;
     digits.forEach((ch, i) => {
-      const selector = ch === "," ? `.num-idx-${i}-point` : `.num-idx-${i}-${ch}`;
-      setTimeout(() => numAnimate(selector), delay * i);
+      if (!CHARS.includes(ch)) return;
+      setTimeout(() => animateTo(`.num-idx-${i}`), delayStep * i);
     });
 
-    function numAnimate(selector) {
+    function animateTo(selector) {
       const numEl = container.querySelector(selector);
       if (!numEl) return;
-      const numList = numEl.querySelector(".num-list");
-      const dataText = numEl.getAttribute("data-text");
-      const pos = dataText === "," ? 10 : +dataText;
+
+      const list = numEl.querySelector(".num-list");
+      const ch = numEl.getAttribute("data-text");
+      const pos = CHARS.indexOf(ch); // позиция целевого символа
+      const step = list.firstElementChild.getBoundingClientRect().height;
+      const target = (Number(turns) || 1) * full + pos;
 
       let n = 0;
       const id = setInterval(() => {
-        numList.style.marginTop = `-${n * 30}px`;
-        if (n >= 10) {
+        list.style.transition = type === "slide" ? "transform .3s" : "none";
+        list.style.transform = `translateY(${-n * step}px)`;
+        if (n >= target) {
           clearInterval(id);
-          numList.style.marginTop = `-${pos * 30}px`;
+          list.style.transform = `translateY(${-pos * step}px)`;
         }
         n++;
       }, spd);
+
+      // запомним таймер, чтобы уметь отменять при повторном вызове
+      container._rollingTimers.push(id);
     }
   }
 
@@ -150,5 +188,3 @@
     targets.forEach((el) => enrollIO.observe(el));
   })();
 })();
-
-

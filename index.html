@@ -18,7 +18,61 @@
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/footer.css" />
 
-    <title>WINN COIN</title>
+    <!-- Primary SEO -->
+    <title>Winn Coin — Deflationary Token of the Winn Chain Ecosystem</title>
+    <meta name="description" content="Winn Coin powers the Winn Chain: secure, low-cost transactions, staking rewards, and a deflationary model that fuels a global, community-driven ecosystem." />
+    <link rel="canonical" href="https://example.com/" />
+    <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+    <meta name="theme-color" content="#0B0B0B" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Winn Coin" />
+    <meta property="og:title" content="Winn Coin — Deflationary Token of the Winn Chain Ecosystem" />
+    <meta property="og:description" content="Secure, low-cost transactions and staking on Winn Chain. Explore the deflationary economics and community-powered growth of Winn Coin." />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://example.com/assets/img/og/winn-coin-og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Winn Coin — Deflationary Token of the Winn Chain Ecosystem" />
+    <meta name="twitter:description" content="Secure, low-cost transactions and staking on Winn Chain. Explore the deflationary economics and community-powered growth of Winn Coin." />
+    <meta name="twitter:image" content="https://example.com/assets/img/og/winn-coin-og.jpg" />
+    <!-- <meta name="twitter:site" content="@YourHandle" /> -->
+
+    <!-- Hreflang (если только EN-версия сайта) -->
+    <link rel="alternate" href="https://example.com/" hreflang="en" />
+    <link rel="alternate" href="https://example.com/" hreflang="x-default" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "Winn Coin",
+            "url": "https://example.com/",
+            "logo": "https://example.com/assets/img/logo.svg",
+            "sameAs": ["https://twitter.com/yourprofile", "https://youtube.com/@yourchannel", "https://discord.gg/yourinvite", "https://t.me/yourchannel", "https://medium.com/@yourprofile"]
+          },
+          {
+            "@type": "WebSite",
+            "name": "Winn Coin",
+            "url": "https://example.com/",
+            "inLanguage": "en",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://example.com/search?q={query}",
+              "query-input": "required name=query"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="container">
@@ -73,7 +127,7 @@
                 <use href="/assets/img/globe.svg#icon"></use>
               </svg>
               <span data-stagger="0.3">
-                <p class="reveal" data-anim="slide-in-right">+12,000</p>
+                <p data-anim="enroll" data-num="+12,000">+12,000</p>
                 <p class="reveal" data-anim="slide-in-right">Users from the globe</p>
               </span>
             </div>
@@ -105,7 +159,7 @@
               </svg>
               <p>Total Supply</p>
             </span>
-            <p>$123,456,789,00</p>
+            <p data-anim="enroll" data-num="$123,456,789,00">$123,456,789,00</p>
           </div>
         </div>
         <img src="/assets/img/hero.svg" alt="hero image" width="100%" height="200" />
@@ -215,7 +269,7 @@
                   Traditional financial systems are slow, expensive, and exclusionary. Cross-border payments take days, intermediaries take a cut, and millions lack access to basic financial tools
                 </p>
               </li>
-              <li class="active reveal" data-anim="slide-in-right">
+              <li class="fancy-border loading active reveal" data-anim="slide-in-right">
                 <div>
                   <span>
                     <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -253,22 +307,22 @@
         <ul class="container" data-stagger="0.1">
           <li class="reveal" data-anim="slide-in-left">
             <div class="head">
-              <span>
+              <span class="fancy-border loading">
                 <svg width="36" height="40" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <use href="/assets/img/lock.svg#icon"></use>
                 </svg>
               </span>
               <h3>Total Value Locked</h3>
             </div>
-            <p>$26,488,900</p>
+            <p data-anim="enroll" data-num="$26,488,900">$26,488,900</p>
             <div class="footer">
               <p>24h</p>
-              <span class="green">+$1,998,000</span>
+              <span class="green" data-anim="enroll" data-num="+$1,998,000">+$1,998,000</span>
             </div>
           </li>
           <li class="reveal" data-anim="slide-in-left">
             <div class="head">
-              <span>
+              <span class="fancy-border loading">
                 <svg viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M3.45833 13.5714H32.625M7.22817 1.25V4.46466M28.4583 1.25V4.46427M28.4583 4.46427H7.625C4.17322 4.46427 1.375 7.34242 1.375 10.8928V32.3215C1.375 35.8718 4.17322 38.75 7.625 38.75H28.4583C31.9101 38.75 34.7083 35.8718 34.7083 32.3215L34.7083 10.8928C34.7083 7.34242 31.9101 4.46427 28.4583 4.46427ZM12.8333 26.4285L15.9583 29.6428L23.25 22.1428"
@@ -281,15 +335,15 @@
               </span>
               <h3>Transactions to Date</h3>
             </div>
-            <p>2,345</p>
+            <p data-anim="enroll" data-num="2,345">2,345</p>
             <div class="footer">
               <p>24h</p>
-              <span class="green">+23</span>
+              <span class="green" data-anim="enroll" data-num="+23">+23</span>
             </div>
           </li>
           <li class="reveal" data-anim="slide-in-left">
             <div class="head">
-              <span>
+              <span class="fancy-border loading">
                 <svg width="36" height="40" viewBox="0 0 32 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M16.0001 41C7.72917 41 1 34.6623 1 26.8723C1 16 16.0002 1 16.0002 1C16.0002 1 31 16 31 26.8723C31 34.6624 24.2711 41 16.0001 41ZM16.0001 41C11.8646 41 8.5 37.8312 8.5 33.9362C8.5 28.5 16.0001 21 16.0001 21C16.0001 21 23.5 28.5 23.5 33.9362C23.5 37.8312 20.1356 41 16.0001 41Z"
@@ -301,25 +355,25 @@
               </span>
               <h3>Total Winn Burned</h3>
             </div>
-            <p>$26,488,900</p>
+            <p data-anim="enroll" data-num="$26,488,900">$26,488,900</p>
             <div class="footer">
               <p>24h</p>
-              <span class="red">-$22,234</span>
+              <span class="red" data-anim="enroll" data-num="-$22,234">-$22,234</span>
             </div>
           </li>
           <li class="reveal" data-anim="slide-in-left">
             <div class="head">
-              <span>
+              <span class="fancy-border loading">
                 <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <use href="/assets/img/wallet.svg#icon"></use>
                 </svg>
               </span>
               <h3>Active Staking Wallets</h3>
             </div>
-            <p>4,009</p>
+            <p data-anim="enroll" data-num="4,009">4,009</p>
             <div class="footer">
               <p>24h</p>
-              <span class="red">-22</span>
+              <span class="red" data-anim="enroll" data-num="-22">-22</span>
             </div>
           </li>
         </ul>
@@ -340,6 +394,7 @@
 
           <ul class="drag-scroll">
             <li class="completed">
+              <div class="stage fancy-border loading"></div>
               <span>2024</span>
               <p>Completed</p>
               <ul>
@@ -352,6 +407,7 @@
               </ul>
             </li>
             <li class="in-progress">
+              <div class="stage fancy-border loading"></div>
               <span>2025</span>
               <p>Inprogress</p>
               <ul>
@@ -367,6 +423,7 @@
               </ul>
             </li>
             <li class="up-next">
+              <div class="stage fancy-border loading"></div>
               <span>2026</span>
               <p>Up Next</p>
               <ul>
@@ -379,6 +436,7 @@
               </ul>
             </li>
             <li class="up-next">
+              <div class="stage fancy-border loading"></div>
               <span>2027</span>
               <p>Beyond – Future</p>
               <ul>
@@ -398,33 +456,33 @@
         <div class="container">
           <h2 class="reveal" data-anim="fade-up">The Pillars of <span>Winn</span> Coin</h2>
 
-          <ul data-stagger="0.1">
+          <ul>
             <li class="reveal" data-anim="slide-in-left">
-              <span class="reveal" data-anim="fade-up" data-delay="0.4">
+              <span class="reveal" data-anim="fade-up">
                 Feaure 1:
-                <h3 class="reveal" data-anim="fade-up" data-delay="0.6">Deflationary Economics</h3>
+                <h3 class="reveal" data-anim="fade-up">Deflationary Economics</h3>
               </span>
-              <p class="reveal" data-anim="fade-up" data-delay="0.8">
+              <p class="reveal" data-anim="fade-up">
                 A controlled issuance model with a 50% annual reduction in new coins, combined with a transaction fee burn mechanism, creates sustainable scarcity and long-term value appreciation.
               </p>
               <img class="reveal" data-anim="fade-scale" src="/assets/img/feature_1.png" alt="Deflationary Economics feature" width="100%" height="200" />
             </li>
             <li class="reveal" data-anim="slide-in-right">
-              <span class="reveal" data-anim="fade-up" data-delay="0.4">
+              <span class="reveal" data-anim="fade-up">
                 Feaure 2:
-                <h3 class="reveal" data-anim="fade-up" data-delay="0.6">Staking for Security & Rewards</h3>
+                <h3 class="reveal" data-anim="fade-up">Staking for Security & Rewards</h3>
               </span>
-              <p class="reveal" data-anim="fade-up" data-delay="0.8">
+              <p class="reveal" data-anim="fade-up">
                 Stake your Winn Coin to help secure the network and earn substantial rewards, calculated as half of the following year's issuance. Foster growth while you earn.
               </p>
               <img class="reveal" data-anim="fade-scale" src="/assets/img/feature_2.png" alt="Staking for Security & Rewards feature" width="100%" height="200" />
             </li>
             <li class="reveal" data-anim="slide-in-left">
-              <span class="reveal" data-anim="fade-up" data-delay="0.4">
+              <span class="reveal" data-anim="fade-up">
                 Feaure 3:
-                <h3 class="reveal" data-anim="fade-up" data-delay="0.6">Global Community Distribution</h3>
+                <h3 class="reveal" data-anim="fade-up">Global Community Distribution</h3>
               </span>
-              <p class="reveal" data-anim="fade-up" data-delay="0.8">
+              <p class="reveal" data-anim="fade-up">
                 Our unique NFT-based Country Wallet System ensures fair and decentralized global distribution, empowering local communities to manage their own growth within the ecosystem.
               </p>
               <img class="reveal" data-anim="fade-scale" src="/assets/img/feature_3.png" alt="Global Community Distribution feature" width="100%" height="200" />
@@ -455,7 +513,7 @@
           Discover Warmy.world
           <span>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <use href="/assets/img/globe.svg#link"></use>
+              <use href="/assets/img/arrows.svg#link"></use>
             </svg>
           </span>
         </a>
@@ -464,7 +522,7 @@
       <section class="journey container">
         <h2 class="reveal" data-anim="fade-in">Your <span>Journey</span> Starts Here</h2>
 
-        <ul data-stagger="0.3">
+        <ul>
           <li class="reveal" data-anim="slide-in-left">
             <h3>Get a Wallet</h3>
             <p>To hold Winn Coin, you'll need a compatible cryptocurrency wallet (e.g., MetaMask, Trust Wallet). Download and secure your wallet, never sharing your private keys!</p>
@@ -575,22 +633,22 @@
           <h3 class="reveal" data-anim="fade-up">Smart Contract Audits In Progress</h3>
 
           <ul data-stagger="0.1">
-            <li class="reveal" data-anim="slide-in-left">
+            <li class="reveal fancy-border loading" data-anim="slide-in-left">
               <img src="/assets/img/certik.png" alt="CERTIK logo" width="100" height="100" />
             </li>
-            <li class="reveal" data-anim="slide-in-right">
+            <li class="reveal fancy-border loading" data-anim="slide-in-right">
               <img src="/assets/img/hacken.png" alt="HACKEN logo" width="100" height="100" />
             </li>
-            <li class="reveal" data-anim="slide-in-left">
+            <li class="reveal fancy-border loading" data-anim="slide-in-left">
               <img src="/assets/img/certik.png" alt="CERTIK logo" width="100" height="100" />
             </li>
-            <li class="reveal" data-anim="slide-in-right">
+            <li class="reveal fancy-border loading" data-anim="slide-in-right">
               <img src="/assets/img/hacken.png" alt="HACKEN logo" width="100" height="100" />
             </li>
-            <li class="reveal" data-anim="slide-in-left">
+            <li class="reveal fancy-border loading" data-anim="slide-in-left">
               <img src="/assets/img/certik.png" alt="CERTIK logo" width="100" height="100" />
             </li>
-            <li class="reveal" data-anim="slide-in-right">
+            <li class="reveal fancy-border loading" data-anim="slide-in-right">
               <img src="/assets/img/hacken.png" alt="HACKEN logo" width="100" height="100" />
             </li>
           </ul>
@@ -604,42 +662,58 @@
         <div class="swiper team-swiper">
           <ul class="swiper-wrapper">
             <li class="swiper-slide">
-              <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              <div class="fancy-border loading">
+                <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              </div>
               <h3>Lorem Ipsum</h3>
               <p>CEO</p>
             </li>
             <li class="swiper-slide">
-              <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              <div class="fancy-border loading">
+                <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              </div>
               <h3>Lorem Ipsum</h3>
               <p>CEO</p>
             </li>
             <li class="swiper-slide">
-              <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              <div class="fancy-border loading">
+                <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              </div>
               <h3>Lorem Ipsum</h3>
               <p>CEO</p>
             </li>
             <li class="swiper-slide">
-              <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              <div class="fancy-border loading">
+                <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              </div>
               <h3>Lorem Ipsum</h3>
               <p>CEO</p>
             </li>
             <li class="swiper-slide">
-              <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              <div class="fancy-border loading">
+                <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              </div>
               <h3>Lorem Ipsum</h3>
               <p>CEO</p>
             </li>
             <li class="swiper-slide">
-              <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              <div class="fancy-border loading">
+                <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              </div>
               <h3>Lorem Ipsum</h3>
               <p>CEO</p>
             </li>
             <li class="swiper-slide">
-              <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              <div class="fancy-border loading">
+                <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              </div>
               <h3>Lorem Ipsum</h3>
               <p>CEO</p>
             </li>
             <li class="swiper-slide">
-              <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              <div class="fancy-border loading">
+                <img src="/assets/img/temp_team.jpg" alt="team member" width="150" height="150" />
+              </div>
               <h3>Lorem Ipsum</h3>
               <p>CEO</p>
             </li>

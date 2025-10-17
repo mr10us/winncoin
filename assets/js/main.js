@@ -4,6 +4,7 @@ async function init() {
   try {
     await ensureSwiper();
     initialiseSliders();
+    setUpFancyBorders();
   } catch (e) {
     console.error("Swiper load failed:", e);
   } finally {
@@ -211,3 +212,25 @@ function initialiseSliders() {
 
   document.querySelectorAll('.drag-scroll').forEach(enableDragScroll);
 })();
+
+function setUpFancyBorders() {
+  const borders = document.querySelectorAll('.fancy-border.loading');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const delay = (Math.random() * 2).toFixed(2);
+
+        entry.target.classList.remove('loading');
+        entry.target.style = `--fdelay: ${delay}s;`;
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px -10% 0px',
+    threshold: 0.3
+  });
+  borders.forEach((border) => {
+    observer.observe(border);
+  });
+}
