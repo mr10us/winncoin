@@ -442,7 +442,7 @@ section.metrics .btn {
 /* –––––––– PATH –––––––– */
 
 section.path {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 section.path h2 {
   position: relative;
