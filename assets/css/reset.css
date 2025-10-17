@@ -656,3 +656,40 @@ label > textarea:not([type="checkbox"]):has(+ span):not(:focus):placeholder-show
   justify-content: center;
 }
 
+
+
+/* базовая анимация покачивания */
+@keyframes bob {
+  0%   { transform: translateY(calc( 0px)); }
+  50%  { transform: translateY(calc(var(--amp, 8px) * -1)); } /* вверх */
+  100% { transform: translateY(0); }
+}
+
+/* удобные утилити-классы */
+.bob {
+  --amp: 8px;            /* амплитуда (бОльшая) */
+  --dur: 2.2s;           /* длительность */
+  --delay: 0s;           /* задержка / фаза */
+  animation: bob var(--dur) ease-in-out var(--delay) infinite;
+  will-change: transform;
+}
+
+/* меньшая амплитуда */
+.bob--sm {
+  --amp: 3px;
+  --dur: 1.8s;
+}
+
+/* немного «вразнобой» можно сместить фазу */
+.bob--phase { --delay: -.9s; }
+
+/* уважение к reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .bob, .bob--sm { animation: none; transform: none; }
+}
+
+/* для SVG важно: чтобы transform считался от границ фигуры */
+svg .bob, svg .bob--sm {
+  transform-box: fill-box;
+  transform-origin: center; /* либо top/center если нужно от верхней кромки */
+}

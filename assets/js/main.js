@@ -158,15 +158,6 @@ function initialiseSliders() {
       el: ".swiper-pagination",
       clickable: true,
     },
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-        slidesPerView: 3
-      },
-    },
   })
 }
 
@@ -179,39 +170,44 @@ function initialiseSliders() {
     let startLeft = 0;
     let moved = false;
 
-    el.addEventListener('pointerdown', (e) => {
+    function onPointerDown(e) {
+      if (e.pointerType !== 'mouse') return; // ← игнорируем touch/pen
       isDown = true;
       moved = false;
       startX = e.clientX;
       startLeft = el.scrollLeft;
       el.classList.add('dragging');
       el.setPointerCapture?.(e.pointerId);
-    });
+    }
 
-    el.addEventListener('pointermove', (e) => {
-      if (!isDown) return;
+    function onPointerMove(e) {
+      if (!isDown || e.pointerType !== 'mouse') return;
       const dx = e.clientX - startX;
-      if (Math.abs(dx) > 3) moved = true;            // порог, чтобы клик не срабатывал
-      el.scrollLeft = startLeft - dx;                // тащим контент
-    });
+      if (Math.abs(dx) > 3) moved = true;
+      el.scrollLeft = startLeft - dx;
+    }
 
     function endDrag(e) {
+      if (e.pointerType !== 'mouse') return;
       isDown = false;
       el.classList.remove('dragging');
       try { el.releasePointerCapture?.(e.pointerId); } catch {}
     }
+
+    el.addEventListener('pointerdown', onPointerDown);
+    el.addEventListener('pointermove', onPointerMove);
     el.addEventListener('pointerup', endDrag);
     el.addEventListener('pointercancel', endDrag);
     el.addEventListener('pointerleave', (e) => isDown && endDrag(e));
 
-    // если перетаскивали — отменим клик по ссылкам внутри
-    el.addEventListener('click', (e) => {
-      if (moved) e.preventDefault();
-    }, true);
+    // если перетаскивали — отменим клик по ссылкам внутри (только для мыши)
+    el.addEventListener('click', (e) => { if (moved) e.preventDefault(); }, true);
   }
 
+  // Включаем на всех .drag-scroll (безо всяких эффектов на touch)
   document.querySelectorAll('.drag-scroll').forEach(enableDragScroll);
 })();
+
 
 function setUpFancyBorders() {
   const borders = document.querySelectorAll('.fancy-border.loading');

@@ -162,7 +162,9 @@
             <p data-anim="enroll" data-num="$123,456,789,00">$123,456,789,00</p>
           </div>
         </div>
-        <img src="/assets/img/hero.svg" alt="hero image" width="100%" height="200" />
+        <svg fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <use href="/assets/img/hero.svg#bg"></use>
+        </svg>
       </section>
 
       <section class="marquee">
@@ -250,7 +252,7 @@
         </div>
       </section>
 
-      <section class="problem">
+      <section id="solution" class="problem">
         <div class="container">
           <h2 class="reveal" data-anim="fade-scale">Building a Fairer <span>Financial</span> Future</h2>
 
@@ -289,7 +291,7 @@
         </div>
       </section>
 
-      <section class="metrics">
+      <section id="ecosystem" class="metrics">
         <div class="container">
           <span>
             <h2 class="reveal" data-anim="slide-in-left">Live <span>Ecosystem</span> Metrics</h2>
@@ -452,7 +454,7 @@
         </div>
       </section>
 
-      <section class="feature">
+      <section id="features" class="feature">
         <div class="container">
           <h2 class="reveal" data-anim="fade-up">The Pillars of <span>Winn</span> Coin</h2>
 
@@ -491,7 +493,7 @@
         </div>
       </section>
 
-      <section class="about container">
+      <section id="community" class="about container">
         <div>
           <h2 class="reveal" data-anim="fade-scale">A Community-Powered <span>Ecosystem</span></h2>
 
@@ -507,40 +509,45 @@
         <img class="reveal" data-anim="fade-in" src="/assets/img/about.svg" alt="A Community-Powered Ecosystem" width="100%" height="320" />
       </section>
 
-      <section class="cta container">
-        <h2>Explore the growing world of <span>Warmy</span> and see how you can contribute!</h2>
-        <a href="#" class="btn secondary">
-          Discover Warmy.world
-          <span>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <use href="/assets/img/arrows.svg#link"></use>
-            </svg>
-          </span>
-        </a>
+      <section class="cta">
+        <div class="container">
+          <h2>Explore the growing world of <span>Warmy</span> and see how you can contribute!</h2>
+          <a href="#" class="btn secondary">
+            Discover Warmy.world
+            <span>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use href="/assets/img/arrows.svg#link"></use>
+              </svg>
+            </span>
+          </a>
+        </div>
       </section>
 
-      <section class="journey container">
-        <h2 class="reveal" data-anim="fade-in">Your <span>Journey</span> Starts Here</h2>
+      <section id="resource" class="journey">
+        <div class="container">
+          <h2 class="reveal" data-anim="fade-in">Your <span>Journey</span> Starts Here</h2>
 
-        <ul>
-          <li class="reveal" data-anim="slide-in-left">
-            <h3>Get a Wallet</h3>
-            <p>To hold Winn Coin, you'll need a compatible cryptocurrency wallet (e.g., MetaMask, Trust Wallet). Download and secure your wallet, never sharing your private keys!</p>
-          </li>
-          <li class="reveal" data-anim="slide-in-right">
-            <h3>Acquire Winn Coin</h3>
-            <p>
-              Once the token is live, you will be able to acquire WINN through our official partners and supported decentralized exchanges (DEXs). Stay tuned to our official channels for the latest
-              listing announcements.
-            </p>
-          </li>
-          <li class="reveal" data-anim="slide-in-left">
-            <h3>Stake or Use</h3>
-            <p>
-              Participate in network security and earn rewards by staking your Winn Coin. Alternatively, use Winn to pay for transaction fees and services within the growing Winn Chain dApp ecosystem
-            </p>
-          </li>
-        </ul>
+          <ul>
+            <li class="reveal" data-anim="slide-in-left">
+              <h3>Get a Wallet</h3>
+              <p>To hold Winn Coin, you'll need a compatible cryptocurrency wallet (e.g., MetaMask, Trust Wallet). Download and secure your wallet, never sharing your private keys!</p>
+            </li>
+            <li class="reveal" data-anim="slide-in-right">
+              <h3>Acquire Winn Coin</h3>
+              <p>
+                Once the token is live, you will be able to acquire WINN through our official partners and supported decentralized exchanges (DEXs). Stay tuned to our official channels for the latest
+                listing announcements.
+              </p>
+            </li>
+            <li class="reveal" data-anim="slide-in-left">
+              <h3>Stake or Use</h3>
+              <p>
+                Participate in network security and earn rewards by staking your Winn Coin. Alternatively, use Winn to pay for transaction fees and services within the growing Winn Chain dApp
+                ecosystem
+              </p>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <section id="faq" class="faq container">
@@ -625,7 +632,7 @@
         </ul>
       </section>
 
-      <section class="foundation">
+      <section id="security" class="foundation">
         <div class="container">
           <h2 class="reveal" data-anim="fade-up">Build on a <span>Foundation</span> of Trust</h2>
           <p class="reveal" data-anim="fade-scale">Transparency and security are our highest priorities</p>
@@ -729,7 +736,9 @@
         </div>
 
         <span>
-          <img class="globe" src="/assets/img/globe.png" alt="globe image" width="100%" height="250" />
+          <svg width="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <use href="/assets/img/footer-bg.svg#bg"></use>
+          </svg>
           <img src="/assets/img/coin.png" alt="coin image" width="150" height="150" />
         </span>
       </section>
